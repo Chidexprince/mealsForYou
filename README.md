@@ -1,2 +1,2 @@
 # mealsForYou
-A Restaurant app to get meals available within a city
+A Restaurant app built with React Native using Google MAP API and integrating Stripe for payment

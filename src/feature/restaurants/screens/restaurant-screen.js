@@ -5,10 +5,7 @@ import { Search } from "../../../components/search/search";
 import { Spacer } from "../../../components/spacer/spacer";
 import { RestaurantInfoCard } from "../components/restaurant-info-card";
 
-const SafeArea = styled(SafeAreaView)`
-  flex: 1;
-  ${StatusBar.currentHeight && `margin-top: ${StatusBar.currentHeight}px`};
-`;
+import { SafeArea } from "../../../components/utils/safe-area";
 
 const SearchContainer = styled.View`
   padding: ${(props) => props.theme.space[3]};

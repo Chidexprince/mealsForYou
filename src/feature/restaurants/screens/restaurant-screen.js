@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import React, { useContext } from "react";
-import { FlatList } from "react-native";
+import { FlatList, TouchableOpacity } from "react-native";
 import styled from "styled-components/native";
 import { ActivityIndicator, Colors } from "react-native-paper";
 
@@ -28,24 +28,27 @@ const Loading = styled(ActivityIndicator)`
   margin-left: -25px;
 `;
 
-export const RestaurantScreen = () => {
+export const RestaurantScreen = ({ navigation }) => {
   const { isLoading, error, restaurants } = useContext(RestaurantsContext);
+  console.log(navigation)
 
   return (
     <>
       <SafeArea>
         {isLoading && (
           <LoadingContainer>
-            <Loading size={50} animating={true} color={Colors.blue400} />
+            <Loading size={50} animating={true} color={Colors.red400} />
           </LoadingContainer>
         )}
           <Search />
         <RestaurantList
           data={restaurants}
           renderItem={({ item }) => (
-            <Spacer position="bottom" size="large">
-              <RestaurantInfoCard restaurant={item} />
-            </Spacer>
+            <TouchableOpacity onPress={() => navigation.navigate("RestaurantDetails")}>
+              <Spacer position="bottom" size="large">
+                <RestaurantInfoCard restaurant={item} />
+              </Spacer>
+            </TouchableOpacity>
           )}
           keyExtractor={(item) => item.name}
         />

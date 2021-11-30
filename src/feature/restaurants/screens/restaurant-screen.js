@@ -30,7 +30,6 @@ const Loading = styled(ActivityIndicator)`
 
 export const RestaurantScreen = ({ navigation }) => {
   const { isLoading, error, restaurants } = useContext(RestaurantsContext);
-  console.log(navigation)
 
   return (
     <>
@@ -44,7 +43,10 @@ export const RestaurantScreen = ({ navigation }) => {
         <RestaurantList
           data={restaurants}
           renderItem={({ item }) => (
-            <TouchableOpacity onPress={() => navigation.navigate("RestaurantDetails")}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("RestaurantDetail", {
+                restaurant: item,
+              })}>
               <Spacer position="bottom" size="large">
                 <RestaurantInfoCard restaurant={item} />
               </Spacer>

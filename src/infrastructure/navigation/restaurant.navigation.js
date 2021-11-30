@@ -1,9 +1,9 @@
 /* eslint-disable prettier/prettier */
 import React from "react";
-import { Text } from "react-native";
 
 import { createStackNavigator, TransitionPresets } from "@react-navigation/stack";
 import { RestaurantScreen } from "../../feature/restaurants/screens/restaurant-screen";
+import { RestaurantDetailScreen } from "../../feature/restaurants/screens/restaurant-detail-screen";
 
 const RestaurantStack = createStackNavigator();
 
@@ -22,8 +22,8 @@ export const RestaurantNavigator = () => {
         component={RestaurantScreen}
       />
       <RestaurantStack.Screen
-        name="RestaurantDetails"
-        component={() => <Text>Restaurant Details</Text>}
+        name="RestaurantDetail"
+        component={RestaurantDetailScreen}
       />
     </RestaurantStack.Navigator>
   );

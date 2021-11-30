@@ -35,6 +35,14 @@ const createScreenOptions = ({ route }) => {
         tabBarIcon: ({ size, color }) => (
             <Ionicons name={iconName} size={size} color={color} />
         ),
+        tabBarActiveTintColor : "tomato",
+        tabBarInactiveTintColor: "gray",
+/*         tabBarStyle: [
+          {
+            display: "flex"
+          },
+          null
+        ], */
     };
 };
 
@@ -43,10 +51,10 @@ export const AppNavigation = () => (
     <NavigationContainer>
         <Tab.Navigator
             screenOptions={createScreenOptions}
-            tabBarOptions={{
+/*             tabBarOptions={{
                 activeTintColor: "tomato",
                 inactiveTintColor: "gray",
-            }}
+            }} */
 
         >
             <Tab.Screen name="Restaurants" component={RestaurantNavigator} />

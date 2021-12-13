@@ -6,8 +6,6 @@ import { SafeArea } from "../../../components/utils/safe-area";
 
 import { List } from "react-native-paper";
 import { ScrollView } from "react-native";
-import { useTheme } from "styled-components";
-
 
 
 export const RestaurantDetailScreen = ({ route }) => {
